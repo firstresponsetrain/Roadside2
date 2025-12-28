@@ -1,0 +1,108 @@
+<!DOCTYPE html><html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Instant Arrival Roadside Assistance | Fast Help Now</title>
+  <meta name="description" content="Flat tire, dead battery, lockout, or need towing? Instant Arrival Roadside Assistance provides fast mobile help in Atlanta & Athens. Call now or request service." />  <style>
+    :root {
+      --primary: #0f172a;
+      --accent: #fbbf24;
+      --bg: #020617;
+      --card: #0b1220;
+      --text: #e5e7eb;
+      --muted: #9ca3af;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Inter, sans-serif;
+      background: linear-gradient(180deg, #020617, #020617 40%, #020617f2);
+      color: var(--text);
+    }
+
+    .container { max-width: 960px; margin: 0 auto; padding: 24px; }
+    header { display: grid; gap: 16px; margin-bottom: 32px; }
+    .badge { display: inline-block; background: rgba(251, 191, 36, 0.15); color: var(--accent); padding: 6px 12px; border-radius: 999px; font-size: 13px; width: fit-content; }
+    h1 { font-size: clamp(28px, 4vw, 44px); line-height: 1.1; margin: 0; letter-spacing: -0.02em; }
+    h1 span { color: var(--accent); }
+    p.lead { font-size: 18px; color: var(--muted); max-width: 720px; }
+    .grid { display: grid; grid-template-columns: 1fr; gap: 24px; }
+    @media (min-width: 768px) { .grid { grid-template-columns: 1.2fr 0.8fr; } }
+    .card { background: var(--card); border: 1px solid rgba(255,255,255,0.06); border-radius: 16px; padding: 24px; }
+    .services { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 8px; }
+    .service { display: flex; gap: 10px; align-items: flex-start; background: rgba(255,255,255,0.03); padding: 12px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.05); }
+    .service input { margin-top: 4px; transform: scale(1.2); }
+    .service label { font-size: 14px; line-height: 1.4; cursor: pointer; }
+    .service strong { display: block; font-weight: 600; }
+    form { display: grid; gap: 12px; margin-top: 12px; }
+    input, textarea, button { width: 100%; padding: 14px 16px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.08); background: #020617; color: var(--text); font-size: 15px; }
+    input::placeholder, textarea::placeholder { color: #6b7280; }
+    textarea { resize: vertical; min-height: 90px; }
+    button { background: linear-gradient(135deg, var(--accent), #f59e0b); color: #020617; font-weight: 700; cursor: pointer; border: none; }
+    button:hover { filter: brightness(1.05); }
+    .trust { display: grid; gap: 12px; margin-top: 16px; font-size: 14px; color: var(--muted); }
+    footer { margin-top: 48px; padding: 24px 0; text-align: center; font-size: 13px; color: #6b7280; }
+    .highlight { color: var(--accent); font-weight: 600; }
+  </style></head>
+<body>  <div class="container"><header>
+  <span class="badge">Atlanta & Athens • Fast Mobile Response</span>
+  <h1>Stranded? <span>We Get You Moving.</span></h1>
+  <p class="lead">Instant Arrival Roadside Assistance provides fast, on-demand help for drivers who need immediate service. No call centers. No waiting games. Real technicians dispatched fast.</p>
+</header>
+
+<section class="grid">
+
+  <div class="card">
+    <h2>Select the help you need</h2>
+    <p class="lead" style="font-size:15px;">Choose one or more services below and leave your contact info. We’ll call you immediately to confirm location and dispatch.</p>
+    <div class="services">
+      <div class="service"><input type="checkbox" id="towing" name="service" value="Towing" /><label for="towing"><strong>Towing</strong>Local & long-distance towing</label></div>
+      <div class="service"><input type="checkbox" id="battery" name="service" value="Battery Jump / Sale" /><label for="battery"><strong>Battery Jump / Sale</strong>Jump-starts & battery replacement</label></div>
+      <div class="service"><input type="checkbox" id="fuel" name="service" value="Fuel Delivery" /><label for="fuel"><strong>Fuel Delivery</strong>Emergency gas delivery</label></div>
+      <div class="service"><input type="checkbox" id="lockout" name="service" value="Lockout Service" /><label for="lockout"><strong>Lockout Service</strong>Keys locked inside vehicle</label></div>
+      <div class="service"><input type="checkbox" id="tire" name="service" value="Tire Assistance / Sale" /><label for="tire"><strong>Tire Assistance / Sale</strong>Flat tire change & replacements</label></div>
+      <div class="service"><input type="checkbox" id="repair" name="service" value="Mobile Repair" /><label for="repair"><strong>Mobile Repair</strong>Minor roadside mechanical fixes</label></div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>Get help now</h2>
+    <form id="leadForm">
+      <input type="text" name="name" placeholder="Your name" required />
+      <input type="tel" name="phone" placeholder="Best phone number" required />
+      <input type="text" name="location" placeholder="Current location or nearest intersection" required />
+      <textarea name="details" placeholder="Vehicle type, issue details (optional)"></textarea>
+      <button type="submit">Request Immediate Assistance</button>
+    </form>
+    <div class="trust">
+      <div>⚡ Fast local dispatch in <span class="highlight">Atlanta & Athens</span></div>
+      <div>📞 You’ll speak directly with a dispatcher</div>
+      <div>🔧 Trusted mobile technicians</div>
+    </div>
+  </div>
+
+</section>
+
+<footer>© 2025 Instant Arrival Roadside Assistance • Emergency roadside services</footer>
+
+  </div>  <!-- JS: Send form data to webhook → email -->  <script>
+    document.getElementById('leadForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const form = e.target;
+      const services = Array.from(document.querySelectorAll('input[name="service"]:checked')).map(cb => cb.value).join(', ');
+      const data = { name: form.name.value, phone: form.phone.value, location: form.location.value, details: form.details.value, services };
+
+      // Replace 'YOUR_WEBHOOK_URL' with your actual webhook endpoint (Zapier, Make, etc.)
+      fetch('YOUR_WEBHOOK_URL', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data)
+      }).then(() => alert('Request received. We are calling you now.'))
+        .catch(() => alert('There was a problem sending your request. Please call us directly.'));
+
+      form.reset();
+    });
+  </script></body>
+</html>
