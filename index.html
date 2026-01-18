@@ -34,7 +34,7 @@
     },
     "areaServed": ["Atlanta, GA", "Athens, GA"],
     "serviceType": ["Towing", "Battery Jump", "Fuel Delivery", "Lockout Service", "Tire Assistance", "Mobile Repair"],
-    "telephone": "+1-XXX-XXX-XXXX",
+    "telephone": "+1-470-722-8838",
     "openingHours": "Mo-Su 00:00-23:59",
     "priceRange": "$$",
     "description": "Emergency roadside assistance with fast mobile response in Atlanta and Athens, Georgia."
@@ -591,7 +591,7 @@
       <!-- RIGHT: Contact Form -->
       <div class="card">
         <h2>Get help now</h2>
-        <form id="leadForm">
+        <form id="leadForm" action="https://formspree.io/f/xbddgnjp" method="POST">
           <input type="text" name="name" placeholder="Your name" required />
           <input type="tel" name="phone" placeholder="Best phone number" required />
           <input type="text" name="location" placeholder="Current location or nearest intersection" required />
@@ -605,6 +605,8 @@
             </label>
           </div>
           
+          <!-- Hidden field for services -->
+          <input type="hidden" name="services" id="servicesHidden">
           <button type="submit" id="submitBtn">Request Immediate Assistance</button>
         </form>
 
@@ -668,11 +670,10 @@
     // Configuration
     // ======================
     const CONFIG = {
-      BACKEND_URL: 'https://your-backend.com/api/submit-lead', // Replace with your backend
-      PHONE_NUMBER: '+1-470-722-8838', // Replace with your phone
-      DISPATCHER_PHONE: '+1-678-5-8278', // Replace with dispatcher phone
-      ENABLE_ANALYTICS: true, // Set to true if you have Google Analytics
-      ENABLE_SMS_NOTIFICATIONS: true // Set to true for SMS alerts
+      PHONE_NUMBER: '+1-470-722-8838',
+      DISPATCHER_PHONE: '+1-678-5-8278',
+      ENABLE_ANALYTICS: true,
+      EMAIL_FALLBACK: 'YOUR_EMAIL@HERE.com' // Add your email for fallback
     };
 
     // ======================
@@ -702,25 +703,287 @@
       submitBtn.disabled = true;
       
       try {
-        // Collect form data
-        const formData = {
-          name: form.name.value.trim(),
-          phone: form.phone.value.trim(),
-          location: form.location.value.trim(),
-          details: form.details.value.trim(),
-          services: getSelectedServices(),
-          timestamp: new Date().toISOString(),
-          userAgent: navigator.userAgent,
-          pageUrl: window.location.href,
-          shareLocation: shareLocationCheckbox.checked
-        };
+        // 1. Collect selected services and put into hidden field
+        const services = getSelectedServices();
+        document.getElementById('servicesHidden').value = services.join(', ');
         
-        // Validate required fields
-        if (!formData.name || !formData.phone || !formData.location) {
+        // 2. Validate required fields
+        if (!form.name.value.trim() || !form.phone.value.trim() || !form.location.value.trim()) {
           throw new Error('Please fill in all required fields');
         }
         
-        // Get precise location if permission granted
+        // 3. Get precise location if permission granted
+        let preciseLocation = '';
         if (shareLocationCheckbox.checked && navigator.geolocation) {
           try {
-  
+            const position = await new Promise((resolve, reject) => {
+              navigator.geolocation.getCurrentPosition(resolve, reject, {
+                enableHighAccuracy: true,
+                timeout: 5000,
+                maximumAge: 0
+              });
+            });
+            preciseLocation = `${position.coords.latitude},${position.coords.longitude}`;
+            
+            // Add as hidden field
+            if (!document.getElementById('preciseLocation')) {
+              const hiddenField = document.createElement('input');
+              hiddenField.type = 'hidden';
+              hiddenField.id = 'preciseLocation';
+              hiddenField.name = 'preciseLocation';
+              form.appendChild(hiddenField);
+            }
+            document.getElementById('preciseLocation').value = preciseLocation;
+          } catch (geoError) {
+            console.log('Location permission denied or failed:', geoError);
+          }
+        }
+        
+        // 4. Submit to Formspree
+        const formData = new FormData(form);
+        
+        const response = await fetch(form.action, {
+          method: 'POST',
+          body: formData,
+          headers: {
+            'Accept': 'application/json'
+          }
+        });
+        
+        if (response.ok) {
+          // Success - show modal
+          const customerPhone = form.phone.value.trim();
+          showSuccessModal(customerPhone);
+          
+          // Track conversion
+          trackEvent('form_submission_success', {
+            services_count: services.length
+          });
+          
+          // Reset form
+          form.reset();
+          
+          // Clear checkboxes
+          document.querySelectorAll('input[name="service"]').forEach(cb => {
+            cb.checked = false;
+          });
+          
+          // Clear location checkbox
+          shareLocationCheckbox.checked = false;
+          
+        } else {
+          const errorData = await response.json();
+          throw new Error(errorData.message || 'Form submission failed. Please try again or call us directly.');
+        }
+        
+      } catch (error) {
+        console.error('Submission error:', error);
+        
+        // Show error message
+        showErrorModal(error.message);
+        
+        // Track error
+        trackEvent('form_submission_error', {
+          error: error.message
+        });
+        
+        // Fallback: Offer email option
+        setTimeout(() => {
+          if (confirm('Having trouble with the form? Click OK to send via email instead.')) {
+            const fallbackEmail = createFallbackEmail(form);
+            window.location.href = fallbackEmail;
+          }
+        }, 1000);
+        
+      } finally {
+        // Reset button state
+        submitBtn.textContent = originalText;
+        submitBtn.classList.remove('button-loading');
+        submitBtn.disabled = false;
+      }
+    });
+
+    // Helper function for fallback email
+    function createFallbackEmail(form) {
+      const services = getSelectedServices().join(', ');
+      const name = form.name.value || 'Not provided';
+      const phone = form.phone.value || 'Not provided';
+      const location = form.location.value || 'Not provided';
+      const details = form.details.value || 'Not provided';
+      
+      const subject = `🚨 ROADSIDE ASSISTANCE: ${name}`;
+      const body = `URGENT - Roadside Assistance Request
+
+Name: ${name}
+Phone: ${phone}
+Location: ${location}
+Services Needed: ${services}
+Details: ${details}
+
+Time: ${new Date().toLocaleString()}
+URL: ${window.location.href}`;
+      
+      return `mailto:${CONFIG.EMAIL_FALLBACK}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    }
+
+    // Helper function to get selected services
+    function getSelectedServices() {
+      return Array.from(document.querySelectorAll('input[name="service"]:checked'))
+        .map(cb => cb.value);
+    }
+
+    // Helper function to show success modal
+    function showSuccessModal(phoneNumber) {
+      modalMessage.innerHTML = `
+        We've received your request and a dispatcher is contacting you now at <strong>${phoneNumber}</strong>.
+        <br><br>
+        <span style="color: var(--accent); font-weight: 600;">Estimated arrival: 15-30 minutes</span>
+        <br><br>
+        Please keep your phone nearby.
+      `;
+      successModal.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+
+    // Helper function to show error modal
+    function showErrorModal(message) {
+      modalMessage.innerHTML = `
+        <div style="color: #ef4444; margin-bottom: 16px;">
+          ⚠️ ${message}
+        </div>
+        <div style="font-size: 14px;">
+          Please call us directly: <a href="tel:+1-470-722-8838" style="color: var(--accent); font-weight: 600;">+1 (470) 722-8838</a>
+        </div>
+      `;
+      successModal.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+
+    // Close modal function
+    function closeModal() {
+      successModal.classList.remove('active');
+      document.body.style.overflow = 'auto';
+    }
+
+    // Track event function
+    function trackEvent(eventName, eventParams = {}) {
+      // Google Analytics
+      if (window.gtag) {
+        gtag('event', eventName, eventParams);
+      }
+      // Facebook Pixel
+      if (window.fbq) {
+        fbq('track', eventName, eventParams);
+      }
+      console.log(`[Analytics] ${eventName}:`, eventParams);
+    }
+
+    // ======================
+    // Event Listeners
+    // ======================
+    modalClose.addEventListener('click', closeModal);
+    
+    successModal.addEventListener('click', function(e) {
+      if (e.target === successModal) {
+        closeModal();
+      }
+    });
+
+    // Phone click tracking
+    [emergencyBadge, phoneLink].forEach(element => {
+      if (element) {
+        element.addEventListener('click', function() {
+          trackEvent('phone_click', {
+            source: this.id,
+            phone_number: CONFIG.PHONE_NUMBER
+          });
+        });
+      }
+    });
+
+    // Form abandonment tracking
+    const formFields = leadForm.querySelectorAll('input, textarea');
+    let formStarted = false;
+    let formTimer = null;
+
+    formFields.forEach(field => {
+      field.addEventListener('focus', () => {
+        if (!formStarted) {
+          formStarted = true;
+          trackEvent('form_start', {
+            field: field.name
+          });
+          
+          // Start timer for abandonment tracking
+          formTimer = setTimeout(() => {
+            trackEvent('form_abandonment_warning', {
+              time_elapsed: '30s'
+            });
+          }, 30000);
+        }
+      });
+    });
+
+    // Clear timer on successful submission
+    leadForm.addEventListener('submit', () => {
+      if (formTimer) {
+        clearTimeout(formTimer);
+      }
+    });
+
+    // ======================
+    // Service Checkbox Improvements
+    // ======================
+    document.querySelectorAll('.service').forEach(serviceEl => {
+      const checkbox = serviceEl.querySelector('input[type="checkbox"]');
+      const label = serviceEl.querySelector('label');
+      
+      // Make entire service card clickable
+      serviceEl.addEventListener('click', (e) => {
+        if (e.target !== checkbox && e.target !== label) {
+          checkbox.checked = !checkbox.checked;
+          checkbox.dispatchEvent(new Event('change'));
+        }
+      });
+      
+      // Visual feedback on change
+      checkbox.addEventListener('change', () => {
+        if (checkbox.checked) {
+          serviceEl.style.borderColor = 'rgba(251, 191, 36, 0.3)';
+          serviceEl.style.background = 'rgba(251, 191, 36, 0.08)';
+        } else {
+          serviceEl.style.borderColor = 'rgba(255,255,255,0.05)';
+          serviceEl.style.background = 'rgba(255,255,255,0.03)';
+        }
+      });
+    });
+
+    // ======================
+    // Page Load Tracking
+    // ======================
+    document.addEventListener('DOMContentLoaded', () => {
+      trackEvent('page_view', {
+        page_title: document.title,
+        page_location: window.location.href
+      });
+    });
+
+    // ======================
+    // Keyboard Shortcuts
+    // ======================
+    document.addEventListener('keydown', (e) => {
+      // Ctrl+Enter or Cmd+Enter to submit form
+      if ((e.ctrlKey || e.metaKey) && e.key === 'Enter') {
+        if (document.activeElement.closest('#leadForm')) {
+          leadForm.requestSubmit();
+        }
+      }
+      
+      // Escape to close modal
+      if (e.key === 'Escape' && successModal.classList.contains('active')) {
+        closeModal();
+      }
+    });
+  </script>
+</body>
+</html>
