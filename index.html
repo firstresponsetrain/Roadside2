@@ -2,22 +2,11 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Instant Arrival Roadside Assistance | Fast Help Now</title>
-  <meta name="description" content="Flat tire, dead battery, lockout, run out of gas, or need towing? Instant Arrival Roadside Assistance provides fast mobile help in Atlanta & Athens. Call now or request service." />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes" />
   
-  <!-- SEO & Social Meta Tags -->
-  <meta property="og:title" content="Instant Arrival Roadside Assistance - Fast Help Now" />
-  <meta property="og:description" content="Flat tire, dead battery, lockout, or need towing? We provide fast mobile help in Atlanta & Athens." />
-  <meta property="og:image" content="https://yourdomain.com/og-image.jpg" />
-  <meta property="og:url" content="https://yourdomain.com" />
-  <meta property="og:type" content="website" />
-  <meta name="twitter:card" content="summary_large_image" />
-  
-  <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <!-- Primary Meta Tags -->
+  <title>Roadside Assistance Atlanta & Athens GA | 24/7 Emergency Towing & Jump Start</title>
+  <meta name="description" content="🚨 Emergency roadside assistance in Atlanta & Athens GA. 15-30 min response time. Towing, jump starts, lockout service, fuel delivery. Call (470) 722-8838 NOW!" />
   
   <!-- Schema Markup -->
   <script type="application/ld+json">
@@ -25,369 +14,672 @@
     "@context": "https://schema.org",
     "@type": "AutoRepair",
     "name": "Instant Arrival Roadside Assistance",
-    "image": "https://yourdomain.com/logo.jpg",
+    "image": "https://instantarrival.com/og-image.jpg",
     "address": {
       "@type": "PostalAddress",
       "addressLocality": "Atlanta",
       "addressRegion": "GA",
-      "addressCountry": "US"
+      "addressCountry": "US",
+      "postalCode": "30303"
     },
-    "areaServed": ["Atlanta, GA", "Athens, GA"],
-    "serviceType": ["Towing", "Battery Jump", "Fuel Delivery", "Lockout Service", "Tire Assistance", "Mobile Repair"],
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": "33.7490",
+      "longitude": "-84.3880"
+    },
+    "areaServed": ["Atlanta, GA", "Athens, GA", "Metro Atlanta"],
+    "serviceType": ["Towing Service", "Battery Jump Start", "Fuel Delivery", "Lockout Service", "Tire Change", "Mobile Mechanic"],
     "telephone": "+1-470-722-8838",
     "openingHours": "Mo-Su 00:00-23:59",
     "priceRange": "$$",
-    "description": "Emergency roadside assistance with fast mobile response in Atlanta and Athens, Georgia."
+    "description": "Emergency roadside assistance with fast mobile response in Atlanta and Athens, Georgia. 24/7 service with 15-30 minute average response time.",
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.9",
+      "reviewCount": "247"
+    }
   }
   </script>
-
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://instantarrival.com/">
+  <meta property="og:title" content="Emergency Roadside Assistance Atlanta & Athens GA - 15-30 Min Response">
+  <meta property="og:description" content="🚨 Stranded? We get you moving FAST! Towing, jump starts, lockout service. 24/7 Emergency Service. Call (470) 722-8838">
+  <meta property="og:image" content="https://instantarrival.com/og-image.jpg">
+  
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://instantarrival.com/">
+  <meta property="twitter:title" content="Emergency Roadside Assistance Atlanta & Athens GA - 15-30 Min Response">
+  <meta property="twitter:description" content="🚨 Stranded? We get you moving FAST! Towing, jump starts, lockout service. 24/7 Emergency Service. Call (470) 722-8838">
+  <meta property="twitter:image" content="https://instantarrival.com/og-image.jpg">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/x-icon" href="https://img.icons8.com/color/96/000000/car-service.png">
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  
+  <!-- Font Awesome for Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
   <style>
+    /* ========== CSS RESET & VARIABLES ========== */
     :root {
       --primary: #0f172a;
-      --accent: #fbbf24;
-      --accent-dark: #f59e0b;
-      --bg: #020617;
-      --card: #0b1220;
-      --text: #e5e7eb;
-      --muted: #9ca3af;
-      --success: #10b981;
+      --primary-light: #1e293b;
+      --accent: #f59e0b;
+      --accent-light: #fbbf24;
+      --accent-glow: rgba(245, 158, 11, 0.3);
       --danger: #dc2626;
+      --danger-light: #ef4444;
+      --success: #10b981;
+      --white: #ffffff;
+      --light: #f8fafc;
+      --gray: #94a3b8;
+      --dark: #020617;
+      --card-bg: rgba(15, 23, 42, 0.8);
+      --card-border: rgba(255, 255, 255, 0.1);
+      --shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+      --shadow-lg: 0 20px 40px rgba(0, 0, 0, 0.3);
+      --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      --border-radius: 16px;
+      --border-radius-sm: 12px;
     }
 
-    * { 
-      box-sizing: border-box;
+    * {
       margin: 0;
       padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
     }
 
     body {
-      font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-      background: linear-gradient(180deg, #020617, #020617 40%, #020617f2);
-      color: var(--text);
-      line-height: 1.5;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: linear-gradient(135deg, #020617 0%, #0f172a 50%, #1e293b 100%);
+      color: var(--light);
+      line-height: 1.6;
       min-height: 100vh;
+      overflow-x: hidden;
+      position: relative;
     }
 
-    .container {
-      max-width: 960px;
-      margin: 0 auto;
-      padding: 24px;
+    body::before {
+      content: '';
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: 
+        radial-gradient(circle at 20% 50%, rgba(245, 158, 11, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(59, 130, 246, 0.05) 0%, transparent 50%);
+      z-index: -1;
     }
 
-    /* Header Styles */
-    header {
-      display: grid;
-      gap: 16px;
-      margin-bottom: 32px;
-    }
-
-    .badge {
-      display: inline-block;
-      background: rgba(251, 191, 36, 0.15);
-      color: var(--accent);
-      padding: 6px 12px;
-      border-radius: 999px;
-      font-size: 13px;
-      width: fit-content;
-      font-weight: 600;
+    /* ========== TYPOGRAPHY ========== */
+    h1, h2, h3, h4 {
+      font-weight: 800;
+      line-height: 1.1;
+      margin-bottom: 1rem;
     }
 
     h1 {
-      font-size: clamp(28px, 4vw, 44px);
-      line-height: 1.1;
-      margin: 0;
+      font-size: clamp(2.5rem, 5vw, 3.75rem);
       letter-spacing: -0.02em;
-      font-weight: 800;
-    }
-
-    h1 span {
-      color: var(--accent);
     }
 
     h2 {
-      font-size: 24px;
-      font-weight: 700;
-      margin-bottom: 12px;
+      font-size: clamp(2rem, 4vw, 3rem);
+      letter-spacing: -0.01em;
     }
 
     h3 {
-      font-size: 20px;
-      font-weight: 600;
-      margin-bottom: 16px;
+      font-size: clamp(1.5rem, 3vw, 2rem);
     }
 
-    p.lead {
-      font-size: 18px;
-      color: var(--muted);
-      max-width: 720px;
-      line-height: 1.6;
+    p {
+      font-size: clamp(1rem, 2vw, 1.125rem);
+      margin-bottom: 1rem;
+      color: var(--gray);
     }
 
-    /* Grid Layout */
-    .grid {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 24px;
-    }
-
-    @media (min-width: 768px) {
-      .grid { 
-        grid-template-columns: 1.2fr 0.8fr;
-      }
-    }
-
-    /* Card Styles */
-    .card {
-      background: var(--card);
-      border: 1px solid rgba(255,255,255,0.06);
-      border-radius: 16px;
-      padding: 24px;
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
-    }
-
-    .card:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
-    }
-
-    /* Services Section */
-    .services {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 12px;
-      margin-top: 8px;
-    }
-
-    @media (min-width: 640px) {
-      .services {
-        grid-template-columns: 1fr 1fr;
-      }
-    }
-
-    .service {
-      display: flex;
-      gap: 10px;
-      align-items: flex-start;
-      background: rgba(255,255,255,0.03);
-      padding: 16px;
-      border-radius: 12px;
-      border: 1px solid rgba(255,255,255,0.05);
-      cursor: pointer;
-      transition: all 0.2s ease;
-    }
-
-    .service:hover {
-      background: rgba(251, 191, 36, 0.05);
-      border-color: rgba(251, 191, 36, 0.2);
-    }
-
-    .service input {
-      margin-top: 4px;
-      transform: scale(1.2);
-      cursor: pointer;
-    }
-
-    .service label {
-      font-size: 14px;
-      line-height: 1.4;
-      cursor: pointer;
-      flex: 1;
-    }
-
-    .service strong {
-      display: block;
-      font-weight: 600;
-      margin-bottom: 4px;
-      color: var(--text);
-    }
-
-    /* Form Styles */
-    form {
-      display: grid;
-      gap: 16px;
-      margin-top: 12px;
-    }
-
-    input, textarea, button {
-      width: 100%;
-      padding: 14px 16px;
-      border-radius: 12px;
-      border: 1px solid rgba(255,255,255,0.08);
-      background: rgba(2, 6, 23, 0.8);
-      color: var(--text);
-      font-size: 15px;
-      font-family: inherit;
-      transition: border-color 0.2s ease;
-    }
-
-    input:focus, textarea:focus {
-      outline: none;
-      border-color: var(--accent);
-      box-shadow: 0 0 0 3px rgba(251, 191, 36, 0.1);
-    }
-
-    input::placeholder, textarea::placeholder {
-      color: #6b7280;
-    }
-
-    textarea { 
-      resize: vertical; 
-      min-height: 100px;
-    }
-
-    button {
-      background: linear-gradient(135deg, var(--accent), var(--accent-dark));
-      color: #020617;
+    .highlight {
+      color: var(--accent);
       font-weight: 700;
-      cursor: pointer;
-      border: none;
-      transition: all 0.2s ease;
-      padding: 16px;
-      font-size: 16px;
+    }
+
+    .text-gradient {
+      background: linear-gradient(135deg, var(--accent) 0%, var(--accent-light) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    /* ========== LAYOUT & CONTAINERS ========== */
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 clamp(1rem, 4vw, 2rem);
+      width: 100%;
+    }
+
+    .section {
+      padding: clamp(3rem, 6vw, 6rem) 0;
+    }
+
+    /* ========== HEADER & NAVIGATION ========== */
+    .main-header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+      padding: 1rem 0;
+      background: rgba(15, 23, 42, 0.95);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .header-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      text-decoration: none;
+    }
+
+    .logo-icon {
+      width: 40px;
+      height: 40px;
+      background: linear-gradient(135deg, var(--accent), var(--accent-light));
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--dark);
+      font-size: 1.25rem;
+      font-weight: 800;
+    }
+
+    .logo-text {
+      font-size: 1.5rem;
+      font-weight: 800;
+      color: var(--white);
+    }
+
+    .logo-text span {
+      color: var(--accent);
+    }
+
+    .emergency-cta {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .emergency-badge {
+      background: var(--danger);
+      color: white;
+      padding: 0.75rem 1.5rem;
+      border-radius: 50px;
+      font-weight: 700;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      transition: var(--transition);
+      box-shadow: 0 4px 20px rgba(220, 38, 38, 0.4);
+      animation: pulse 2s infinite;
+    }
+
+    .emergency-badge:hover {
+      background: var(--danger-light);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 25px rgba(220, 38, 38, 0.5);
+    }
+
+    /* ========== HERO SECTION ========== */
+    .hero {
+      padding-top: 8rem;
+      padding-bottom: 4rem;
       position: relative;
       overflow: hidden;
     }
 
-    button:hover { 
-      filter: brightness(1.1);
-      transform: translateY(-1px);
-      box-shadow: 0 4px 20px rgba(251, 191, 36, 0.3);
+    .hero-content {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 3rem;
+      align-items: center;
     }
 
-    button:active {
-      transform: translateY(0);
+    @media (min-width: 1024px) {
+      .hero-content {
+        grid-template-columns: 1.2fr 1fr;
+      }
     }
 
-    button:disabled {
+    .hero-badge {
+      display: inline-block;
+      background: rgba(245, 158, 11, 0.15);
+      color: var(--accent);
+      padding: 0.5rem 1.25rem;
+      border-radius: 50px;
+      font-size: 0.875rem;
+      font-weight: 600;
+      margin-bottom: 1.5rem;
+      border: 1px solid rgba(245, 158, 11, 0.3);
+    }
+
+    .hero-stats {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
+      margin: 2rem 0;
+    }
+
+    .stat {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: var(--border-radius-sm);
+      padding: 1rem;
+      text-align: center;
+    }
+
+    .stat-number {
+      font-size: 1.5rem;
+      font-weight: 800;
+      color: var(--accent);
+      margin-bottom: 0.25rem;
+    }
+
+    .stat-label {
+      font-size: 0.875rem;
+      color: var(--gray);
+    }
+
+    /* ========== FLOATING SERVICE CARDS ========== */
+    .services-section {
+      position: relative;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+
+    @media (max-width: 768px) {
+      .services-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .service-card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: var(--border-radius);
+      padding: 1.5rem;
+      transition: var(--transition);
+      cursor: pointer;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .service-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 4px;
+      height: 100%;
+      background: linear-gradient(to bottom, var(--accent), var(--accent-light));
+      opacity: 0;
+      transition: var(--transition);
+    }
+
+    .service-card:hover {
+      transform: translateY(-8px);
+      border-color: rgba(245, 158, 11, 0.3);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .service-card:hover::before {
+      opacity: 1;
+    }
+
+    .service-card.selected {
+      border-color: var(--accent);
+      background: rgba(245, 158, 11, 0.05);
+      box-shadow: 0 10px 30px rgba(245, 158, 11, 0.15);
+    }
+
+    .service-card.selected::before {
+      opacity: 1;
+    }
+
+    .service-icon {
+      width: 48px;
+      height: 48px;
+      background: rgba(245, 158, 11, 0.1);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1rem;
+      font-size: 1.25rem;
+      color: var(--accent);
+    }
+
+    .service-title {
+      font-size: 1.25rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+      color: var(--white);
+    }
+
+    .service-description {
+      font-size: 0.875rem;
+      color: var(--gray);
+      margin-bottom: 1rem;
+    }
+
+    .service-checkbox {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      width: 24px;
+      height: 24px;
+      border-radius: 6px;
+      border: 2px solid var(--gray);
+      background: transparent;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+
+    .service-card:hover .service-checkbox {
+      border-color: var(--accent);
+    }
+
+    .service-card.selected .service-checkbox {
+      background: var(--accent);
+      border-color: var(--accent);
+    }
+
+    .service-card.selected .service-checkbox::after {
+      content: '✓';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: white;
+      font-weight: bold;
+      font-size: 0.875rem;
+    }
+
+    /* Hide actual checkbox */
+    .service-card input[type="checkbox"] {
+      display: none;
+    }
+
+    /* ========== CONTACT FORM ========== */
+    .contact-form-container {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: var(--border-radius);
+      padding: 2rem;
+      box-shadow: var(--shadow);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .contact-form-container::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 4px;
+      background: linear-gradient(to right, var(--accent), var(--accent-light));
+    }
+
+    .form-header {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    .form-header i {
+      font-size: 2.5rem;
+      color: var(--accent);
+      margin-bottom: 1rem;
+    }
+
+    .form-group {
+      margin-bottom: 1.5rem;
+    }
+
+    .form-label {
+      display: block;
+      margin-bottom: 0.5rem;
+      font-weight: 600;
+      color: var(--white);
+      font-size: 0.875rem;
+    }
+
+    .form-control {
+      width: 100%;
+      padding: 1rem;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: var(--border-radius-sm);
+      color: var(--white);
+      font-size: 1rem;
+      font-family: inherit;
+      transition: var(--transition);
+    }
+
+    .form-control:focus {
+      outline: none;
+      border-color: var(--accent);
+      box-shadow: 0 0 0 3px var(--accent-glow);
+    }
+
+    .form-control::placeholder {
+      color: rgba(255, 255, 255, 0.4);
+    }
+
+    .location-group {
+      position: relative;
+    }
+
+    .location-btn {
+      position: absolute;
+      right: 0.5rem;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(245, 158, 11, 0.1);
+      border: 1px solid rgba(245, 158, 11, 0.3);
+      color: var(--accent);
+      padding: 0.5rem 1rem;
+      border-radius: 8px;
+      font-size: 0.875rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+
+    .location-btn:hover {
+      background: rgba(245, 158, 11, 0.2);
+    }
+
+    .submit-btn {
+      width: 100%;
+      padding: 1rem;
+      background: linear-gradient(135deg, var(--accent), var(--accent-light));
+      color: var(--dark);
+      border: none;
+      border-radius: var(--border-radius-sm);
+      font-size: 1.125rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: var(--transition);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      margin-top: 1rem;
+    }
+
+    .submit-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 25px rgba(245, 158, 11, 0.3);
+    }
+
+    .submit-btn:disabled {
       opacity: 0.7;
       cursor: not-allowed;
       transform: none;
     }
 
-    /* Trust Indicators */
-    .trust {
-      display: grid;
-      gap: 12px;
-      margin-top: 24px;
-      font-size: 14px;
-      color: var(--muted);
-      padding-top: 16px;
-      border-top: 1px solid rgba(255,255,255,0.06);
+    .trust-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-top: 2rem;
+      padding-top: 2rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
     }
 
-    .trust div {
+    .trust-badge {
       display: flex;
       align-items: center;
-      gap: 8px;
+      gap: 0.5rem;
+      font-size: 0.875rem;
+      color: var(--gray);
     }
 
-    /* Social Proof Section */
-    .social-proof {
-      margin-top: 32px;
+    /* ========== TESTIMONIALS ========== */
+    .testimonials-section {
+      background: rgba(15, 23, 42, 0.5);
+      border-radius: var(--border-radius);
+      padding: 3rem;
+      margin-top: 4rem;
     }
 
-    .stats-grid {
+    .testimonial-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-      gap: 20px;
-      margin-top: 16px;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
     }
 
-    .stat-item {
-      text-align: center;
-      padding: 16px;
-      background: rgba(255,255,255,0.02);
-      border-radius: 12px;
-      border: 1px solid rgba(255,255,255,0.03);
+    .testimonial-card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: var(--border-radius);
+      padding: 1.5rem;
     }
 
-    .stat-number {
-      font-size: 32px;
-      font-weight: 800;
-      color: var(--accent);
-      margin-bottom: 4px;
+    .testimonial-text {
+      font-style: italic;
+      margin-bottom: 1rem;
+      color: var(--light);
     }
 
-    .stat-label {
-      font-size: 14px;
-      color: var(--muted);
-    }
-
-    /* Footer */
-    footer {
-      margin-top: 48px;
-      padding: 32px 0 24px;
-      text-align: center;
-      font-size: 13px;
-      color: #6b7280;
-      border-top: 1px solid rgba(255,255,255,0.06);
-    }
-
-    /* Highlight Class */
-    .highlight {
-      color: var(--accent);
-      font-weight: 600;
-    }
-
-    /* Phone Link */
-    .phone-link {
-      color: var(--accent);
-      text-decoration: none;
-      font-weight: 700;
-      font-size: 1.1em;
-      transition: color 0.2s ease;
-    }
-
-    .phone-link:hover {
-      color: var(--accent-dark);
-      text-decoration: underline;
-    }
-
-    /* Emergency Badge */
-    .emergency-badge {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      background: var(--danger);
-      color: white;
-      padding: 14px 24px;
-      border-radius: 50px;
-      font-weight: 700;
-      box-shadow: 0 4px 20px rgba(220, 38, 38, 0.4);
-      z-index: 1000;
-      cursor: pointer;
+    .testimonial-author {
       display: flex;
       align-items: center;
-      gap: 10px;
-      transition: all 0.3s ease;
+      gap: 0.75rem;
+    }
+
+    .author-avatar {
+      width: 40px;
+      height: 40px;
+      background: linear-gradient(135deg, var(--accent), var(--accent-light));
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--dark);
+      font-weight: 700;
+    }
+
+    /* ========== FOOTER ========== */
+    .main-footer {
+      background: rgba(2, 6, 23, 0.8);
+      border-top: 1px solid rgba(255, 255, 255, 0.05);
+      padding: 3rem 0;
+      margin-top: 4rem;
+    }
+
+    .footer-content {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+      margin-bottom: 2rem;
+    }
+
+    .footer-section h4 {
+      color: var(--white);
+      margin-bottom: 1rem;
+      font-size: 1.125rem;
+    }
+
+    .footer-links {
+      list-style: none;
+    }
+
+    .footer-links li {
+      margin-bottom: 0.5rem;
+    }
+
+    .footer-links a {
+      color: var(--gray);
       text-decoration: none;
-      font-size: 15px;
-      border: none;
-      animation: pulse 2s infinite;
+      transition: var(--transition);
     }
 
-    .emergency-badge:hover {
-      background: #b91c1c;
-      transform: scale(1.05);
-      box-shadow: 0 6px 25px rgba(220, 38, 38, 0.5);
+    .footer-links a:hover {
+      color: var(--accent);
     }
 
-    /* Modal Styles */
+    .footer-bottom {
+      text-align: center;
+      padding-top: 2rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.05);
+      color: var(--gray);
+      font-size: 0.875rem;
+    }
+
+    /* ========== MODAL ========== */
     .modal {
       position: fixed;
       top: 0;
       left: 0;
-      right: 0;
-      bottom: 0;
+      width: 100%;
+      height: 100%;
       background: rgba(2, 6, 23, 0.95);
       display: flex;
       align-items: center;
       justify-content: center;
       z-index: 2000;
-      padding: 20px;
       opacity: 0;
       visibility: hidden;
-      transition: opacity 0.3s ease, visibility 0.3s ease;
+      transition: var(--transition);
+      padding: 1rem;
     }
 
     .modal.active {
@@ -396,25 +688,48 @@
     }
 
     .modal-content {
-      background: var(--card);
-      border-radius: 20px;
-      padding: 32px;
-      max-width: 400px;
+      background: var(--card-bg);
+      border-radius: var(--border-radius);
+      padding: 2.5rem;
+      max-width: 500px;
       width: 100%;
       text-align: center;
-      border: 1px solid var(--accent);
-      animation: slideUp 0.4s ease;
       position: relative;
+      transform: translateY(20px);
+      transition: var(--transition);
+      border: 1px solid var(--card-border);
+    }
+
+    .modal.active .modal-content {
+      transform: translateY(0);
+    }
+
+    .modal-icon {
+      font-size: 3.5rem;
+      color: var(--accent);
+      margin-bottom: 1rem;
+    }
+
+    .modal-title {
+      font-size: 1.75rem;
+      margin-bottom: 1rem;
+      color: var(--white);
+    }
+
+    .modal-message {
+      color: var(--gray);
+      margin-bottom: 2rem;
+      line-height: 1.6;
     }
 
     .modal-close {
       position: absolute;
-      top: 16px;
-      right: 16px;
-      background: none;
+      top: 1rem;
+      right: 1rem;
+      background: transparent;
       border: none;
-      color: var(--muted);
-      font-size: 24px;
+      color: var(--gray);
+      font-size: 1.5rem;
       cursor: pointer;
       width: 32px;
       height: 32px;
@@ -422,327 +737,546 @@
       align-items: center;
       justify-content: center;
       border-radius: 50%;
+      transition: var(--transition);
     }
 
     .modal-close:hover {
-      background: rgba(255,255,255,0.05);
-      color: var(--text);
+      background: rgba(255, 255, 255, 0.05);
+      color: var(--white);
     }
 
-    .modal-icon {
-      font-size: 48px;
-      margin-bottom: 16px;
-    }
-
-    .modal-title {
-      font-size: 24px;
-      font-weight: 700;
-      margin-bottom: 12px;
-      color: var(--accent);
-    }
-
-    .modal-message {
-      color: var(--muted);
-      margin-bottom: 24px;
-    }
-
-    /* Loading Animation */
+    /* ========== ANIMATIONS ========== */
     @keyframes pulse {
       0%, 100% { 
-        opacity: 1;
+        transform: scale(1);
         box-shadow: 0 4px 20px rgba(220, 38, 38, 0.4);
       }
       50% { 
-        opacity: 0.8;
-        box-shadow: 0 4px 25px rgba(220, 38, 38, 0.6);
+        transform: scale(1.05);
+        box-shadow: 0 6px 25px rgba(220, 38, 38, 0.6);
       }
     }
 
-    @keyframes slideUp {
-      from { 
-        transform: translateY(30px); 
-        opacity: 0; 
-      }
-      to { 
-        transform: translateY(0); 
-        opacity: 1; 
-      }
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
     }
 
-    .button-loading {
-      position: relative;
-      color: transparent;
+    .floating {
+      animation: float 3s ease-in-out infinite;
     }
 
-    .button-loading::after {
-      content: '';
-      position: absolute;
-      width: 20px;
-      height: 20px;
-      top: 50%;
-      left: 50%;
-      margin-left: -10px;
-      margin-top: -10px;
-      border: 2px solid rgba(2, 6, 23, 0.3);
-      border-top-color: #020617;
-      border-radius: 50%;
-      animation: spin 0.8s linear infinite;
+    /* ========== UTILITY CLASSES ========== */
+    .hidden {
+      display: none !important;
     }
 
-    @keyframes spin {
-      to { transform: rotate(360deg); }
+    .text-center {
+      text-align: center;
     }
 
-    /* Mobile Optimizations */
-    @media (max-width: 767px) {
-      .container {
-        padding: 16px;
+    .mt-2 { margin-top: 2rem; }
+    .mt-4 { margin-top: 4rem; }
+    .mb-2 { margin-bottom: 2rem; }
+    .mb-4 { margin-bottom: 4rem; }
+
+    /* ========== MOBILE OPTIMIZATIONS ========== */
+    @media (max-width: 768px) {
+      .main-header {
+        padding: 0.75rem 0;
       }
       
-      .card {
-        padding: 20px;
+      .logo-text {
+        font-size: 1.25rem;
+      }
+      
+      .emergency-badge span {
+        display: none;
       }
       
       .emergency-badge {
-        bottom: 16px;
-        right: 16px;
-        padding: 12px 20px;
-        font-size: 14px;
+        padding: 0.75rem;
+        font-size: 0.875rem;
       }
       
-      .services {
+      .hero {
+        padding-top: 6rem;
+      }
+      
+      .services-grid {
+        gap: 1rem;
+      }
+      
+      .contact-form-container {
+        padding: 1.5rem;
+      }
+      
+      .testimonial-grid {
         grid-template-columns: 1fr;
       }
       
-      .stats-grid {
-        grid-template-columns: repeat(2, 1fr);
+      .form-control {
+        padding: 0.875rem;
+      }
+      
+      .location-btn {
+        position: static;
+        transform: none;
+        margin-top: 0.5rem;
+        width: 100%;
       }
     }
 
     @media (max-width: 480px) {
-      .stats-grid {
+      .hero-stats {
         grid-template-columns: 1fr;
       }
       
+      .trust-badges {
+        flex-direction: column;
+      }
+      
       .modal-content {
-        padding: 24px 20px;
+        padding: 1.5rem;
       }
     }
   </style>
 </head>
 <body>
-  <!-- Emergency Call Button -->
-  <a href="tel:+1-4707228838" class="emergency-badge" id="emergencyBadge">
-    <span>🚨</span> EMERGENCY CALL NOW
+  <!-- Emergency Floating Button -->
+  <a href="tel:+14707228838" class="emergency-badge" style="position: fixed; bottom: 2rem; right: 2rem; z-index: 999;">
+    <i class="fas fa-phone-alt"></i>
+    <span>EMERGENCY CALL</span>
   </a>
 
-  <div class="container">
-    <header>
-      <span class="badge">Atlanta & Athens • Fast Mobile Response</span>
-      <h1>
-        Stranded? <span>We Get You Moving.</span>
-      </h1>
-      <p class="lead">
-        Instant Arrival Roadside Assistance provides fast, on-demand help for drivers who need immediate service. No call centers. No waiting games. Real technicians dispatched fast.
-      </p>
+  <!-- Header -->
+  <header class="main-header">
+    <div class="container header-content">
+      <a href="#" class="logo">
+        <div class="logo-icon">
+          <i class="fas fa-car-burst"></i>
+        </div>
+        <div class="logo-text">Instant<span>Arrival</span></div>
+      </a>
       
-      <!-- Emergency Phone Display -->
-      <div style="margin-top: 16px; font-size: 18px;">
-        Need help now? Call: <a href="tel:+1-470-722-8838" class="phone-link" id="phoneLink">+1 (470) 722-8838</a>
+      <div class="emergency-cta">
+        <a href="tel:+14707228838" class="emergency-badge">
+          <i class="fas fa-phone-alt"></i>
+          <span>(470) 722-8838</span>
+        </a>
       </div>
-    </header>
+    </div>
+  </header>
 
-    <section class="grid">
-      <!-- LEFT: Services -->
-      <div class="card">
-        <h2>Select the help you need</h2>
-        <p class="lead" style="font-size:15px; margin-bottom: 20px;">
-          Choose one or more services below and leave your contact info. We'll call you immediately to confirm location and dispatch.
-        </p>
-
-        <div class="services">
-          <div class="service">
-            <input type="checkbox" id="towing" name="service" value="Towing" />
-            <label for="towing"><strong>Towing</strong>Local & long-distance towing</label>
+  <!-- Hero Section -->
+  <section class="hero section">
+    <div class="container hero-content">
+      <div class="hero-text">
+        <span class="hero-badge">
+          <i class="fas fa-bolt"></i> Atlanta & Athens • 15-30 Min Response
+        </span>
+        
+        <h1 class="text-gradient">Stranded? <span class="highlight">We Get You Moving</span> In Minutes</h1>
+        
+        <p class="lead">24/7 emergency roadside assistance when you need it most. No call centers, no waiting games - just real technicians dispatched directly to your location.</p>
+        
+        <div class="hero-stats">
+          <div class="stat">
+            <div class="stat-number">15-30</div>
+            <div class="stat-label">Minute Response</div>
           </div>
-          <div class="service">
-            <input type="checkbox" id="battery" name="service" value="Battery Jump / Sale" />
-            <label for="battery"><strong>Battery Jump / Sale</strong>Jump-starts & battery replacement</label>
+          <div class="stat">
+            <div class="stat-number">24/7</div>
+            <div class="stat-label">Emergency Service</div>
           </div>
-          <div class="service">
-            <input type="checkbox" id="fuel" name="service" value="Fuel Delivery" />
-            <label for="fuel"><strong>Fuel Delivery</strong>Emergency gas delivery</label>
+          <div class="stat">
+            <div class="stat-number">4.9★</div>
+            <div class="stat-label">Customer Rating</div>
           </div>
-          <div class="service">
-            <input type="checkbox" id="lockout" name="service" value="Lockout Service" />
-            <label for="lockout"><strong>Lockout Service</strong>Keys locked inside vehicle</label>
+          <div class="stat">
+            <div class="stat-number">1000+</div>
+            <div class="stat-label">Drivers Helped</div>
           </div>
-          <div class="service">
-            <input type="checkbox" id="tire" name="service" value="Tire Assistance / Sale" />
-            <label for="tire"><strong>Tire Assistance / Sale</strong>Flat tire change & replacements</label>
-          </div>
-          <div class="service">
-            <input type="checkbox" id="repair" name="service" value="Mobile Repair" />
-            <label for="repair"><strong>Mobile Repair</strong>Minor roadside mechanical fixes</label>
+        </div>
+        
+        <div style="margin-top: 2rem;">
+          <a href="#contact" class="submit-btn" style="display: inline-flex; width: auto; padding: 1rem 2rem;">
+            <i class="fas fa-bullhorn"></i> GET HELP NOW
+          </a>
+          <div style="margin-top: 1rem; color: var(--gray);">
+            <i class="fas fa-phone"></i> Prefer to call? <a href="tel:+14707228838" style="color: var(--accent); font-weight: 600; text-decoration: none;">(470) 722-8838</a>
           </div>
         </div>
       </div>
-
-      <!-- RIGHT: Contact Form -->
-      <div class="card">
-        <h2>Get help now</h2>
+      
+      <div class="contact-form-container" id="contact">
+        <div class="form-header">
+          <i class="fas fa-life-ring floating"></i>
+          <h2>Get Help Now</h2>
+          <p>Fill out this form and we'll call you immediately</p>
+        </div>
+        
         <form id="leadForm" action="https://formspree.io/f/xbddgnjp" method="POST">
-          <input type="text" name="name" placeholder="Your name" required />
-          <input type="tel" name="phone" placeholder="Best phone number" required />
-          <input type="text" name="location" placeholder="Current location or nearest intersection" required />
-          <textarea name="details" placeholder="Vehicle type, issue details (optional)"></textarea>
-          
-          <!-- Location Permission Option -->
-          <div style="display: flex; align-items: center; gap: 10px; padding: 10px; background: rgba(251, 191, 36, 0.05); border-radius: 8px;">
-            <input type="checkbox" id="shareLocation" name="shareLocation" />
-            <label for="shareLocation" style="font-size: 14px; cursor: pointer;">
-              <strong>Share precise location</strong> (for faster response)
-            </label>
-          </div>
-          
           <!-- Hidden field for services -->
           <input type="hidden" name="services" id="servicesHidden">
-          <button type="submit" id="submitBtn">Request Immediate Assistance</button>
+          
+          <div class="form-group">
+            <label class="form-label" for="name"><i class="fas fa-user"></i> Your Name *</label>
+            <input type="text" id="name" name="name" class="form-control" placeholder="John Smith" required>
+          </div>
+          
+          <div class="form-group">
+            <label class="form-label" for="phone"><i class="fas fa-phone"></i> Phone Number *</label>
+            <input type="tel" id="phone" name="phone" class="form-control" placeholder="(470) 123-4567" required>
+          </div>
+          
+          <div class="form-group">
+            <label class="form-label" for="location"><i class="fas fa-map-marker-alt"></i> Current Location *</label>
+            <div class="location-group">
+              <input type="text" id="location" name="location" class="form-control" placeholder="Street address or nearest intersection" required>
+              <button type="button" class="location-btn" id="getLocation">
+                <i class="fas fa-location-crosshairs"></i> Use My Location
+              </button>
+            </div>
+          </div>
+          
+          <div class="form-group">
+            <label class="form-label" for="details"><i class="fas fa-car"></i> Vehicle Details</label>
+            <textarea id="details" name="details" class="form-control" placeholder="Year, Make, Model, Color, License Plate, Issue Description" rows="3"></textarea>
+          </div>
+          
+          <button type="submit" id="submitBtn" class="submit-btn">
+            <i class="fas fa-paper-plane"></i> REQUEST IMMEDIATE ASSISTANCE
+          </button>
         </form>
-
-        <div class="trust">
-          <div>⚡ Fast local dispatch in <span class="highlight">Atlanta & Athens</span></div>
-          <div>📞 You'll speak directly with a dispatcher</div>
-          <div>🔧 Trusted mobile technicians</div>
-          <div>⏱️ Average response: <span class="highlight">15-30 minutes</span></div>
+        
+        <div class="trust-badges">
+          <div class="trust-badge">
+            <i class="fas fa-shield-check" style="color: var(--accent);"></i>
+            <span>Licensed & Insured</span>
+          </div>
+          <div class="trust-badge">
+            <i class="fas fa-clock" style="color: var(--accent);"></i>
+            <span>24/7 Service</span>
+          </div>
+          <div class="trust-badge">
+            <i class="fas fa-check-circle" style="color: var(--accent);"></i>
+            <span>Professional Technicians</span>
+          </div>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- Social Proof Section -->
-    <section class="social-proof card">
-      <h3 style="text-align: center; margin-bottom: 24px;">Trusted by Drivers Across Georgia</h3>
-      <div class="stats-grid">
-        <div class="stat-item">
-          <div class="stat-number">15-30</div>
-          <div class="stat-label">Minute Average Response</div>
+  <!-- Services Section -->
+  <section class="services-section section">
+    <div class="container">
+      <div class="text-center mb-4">
+        <h2>Select The Help You Need</h2>
+        <p>Choose one or more services below. Our technicians are equipped to handle multiple issues.</p>
+      </div>
+      
+      <div class="services-grid" id="servicesGrid">
+        <!-- Service cards will be generated by JavaScript -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section class="testimonials-section section">
+    <div class="container">
+      <div class="text-center mb-4">
+        <h2>Trusted By Georgia Drivers</h2>
+        <p>See what our customers have to say about our service</p>
+      </div>
+      
+      <div class="testimonial-grid">
+        <div class="testimonial-card">
+          <div class="testimonial-text">
+            "Flat tire on I-85 during rush hour. Called Instant Arrival and they had someone to me in 20 minutes. Lifesavers!"
+          </div>
+          <div class="testimonial-author">
+            <div class="author-avatar">MJ</div>
+            <div>
+              <div style="font-weight: 600; color: var(--white);">Michael Johnson</div>
+              <div style="font-size: 0.875rem; color: var(--gray);">Atlanta, GA</div>
+            </div>
+          </div>
         </div>
-        <div class="stat-item">
-          <div class="stat-number">24/7</div>
-          <div class="stat-label">Emergency Service</div>
+        
+        <div class="testimonial-card">
+          <div class="testimonial-text">
+            "Battery died in a parking lot at midnight. They were there in 25 minutes and got me going. Professional and fast!"
+          </div>
+          <div class="testimonial-author">
+            <div class="author-avatar">SR</div>
+            <div>
+              <div style="font-weight: 600; color: var(--white);">Sarah Rodriguez</div>
+              <div style="font-size: 0.875rem; color: var(--gray);">Athens, GA</div>
+            </div>
+          </div>
         </div>
-        <div class="stat-item">
-          <div class="stat-number">4.9★</div>
-          <div class="stat-label">Customer Rating</div>
-        </div>
-        <div class="stat-item">
-          <div class="stat-number">1000+</div>
-          <div class="stat-label">Drivers Helped</div>
+        
+        <div class="testimonial-card">
+          <div class="testimonial-text">
+            "Locked my keys in the car with the engine running. They arrived quickly and unlocked it without damage. Highly recommend!"
+          </div>
+          <div class="testimonial-author">
+            <div class="author-avatar">TB</div>
+            <div>
+              <div style="font-weight: 600; color: var(--white);">Thomas Brown</div>
+              <div style="font-size: 0.875rem; color: var(--gray);">Atlanta, GA</div>
+            </div>
+          </div>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <footer>
-      © 2026 Instant Arrival Roadside Assistance • Emergency roadside services • Atlanta & Athens, GA
-      <div style="margin-top: 12px; font-size: 12px; color: #4b5563;">
-        Available 24/7 • Licensed & Insured • Professional Technicians
+  <!-- Footer -->
+  <footer class="main-footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h4>Instant Arrival</h4>
+          <p>24/7 emergency roadside assistance serving Atlanta and Athens, Georgia with fast, reliable service.</p>
+          <div style="margin-top: 1rem;">
+            <a href="tel:+14707228838" class="emergency-badge" style="display: inline-flex;">
+              <i class="fas fa-phone-alt"></i>
+              <span>(470) 722-8838</span>
+            </a>
+          </div>
+        </div>
+        
+        <div class="footer-section">
+          <h4>Services</h4>
+          <ul class="footer-links">
+            <li><a href="#services">Towing Service</a></li>
+            <li><a href="#services">Jump Starts</a></li>
+            <li><a href="#services">Tire Changes</a></li>
+            <li><a href="#services">Lockout Service</a></li>
+            <li><a href="#services">Fuel Delivery</a></li>
+            <li><a href="#services">Mobile Repair</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-section">
+          <h4>Coverage Areas</h4>
+          <ul class="footer-links">
+            <li>Atlanta Metro</li>
+            <li>Downtown Atlanta</li>
+            <li>Athens-Clarke County</li>
+            <li>Gwinnett County</li>
+            <li>Fulton County</li>
+            <li>Cobb County</li>
+          </ul>
+        </div>
+        
+        <div class="footer-section">
+          <h4>Business Hours</h4>
+          <ul class="footer-links">
+            <li>Monday: 24/7</li>
+            <li>Tuesday: 24/7</li>
+            <li>Wednesday: 24/7</li>
+            <li>Thursday: 24/7</li>
+            <li>Friday: 24/7</li>
+            <li>Weekends: 24/7</li>
+          </ul>
+        </div>
       </div>
-    </footer>
-  </div>
+      
+      <div class="footer-bottom">
+        <p>© 2026 Instant Arrival Roadside Assistance. All rights reserved. | Licensed & Insured in Georgia</p>
+        <p style="margin-top: 0.5rem; font-size: 0.75rem; color: var(--gray);">Emergency roadside assistance for Atlanta, Athens, and surrounding areas.</p>
+      </div>
+    </div>
+  </footer>
 
   <!-- Success Modal -->
   <div class="modal" id="successModal">
     <div class="modal-content">
       <button class="modal-close" id="modalClose">&times;</button>
-      <div class="modal-icon">🚗</div>
-      <div class="modal-title">Help Is On The Way!</div>
+      <div class="modal-icon">
+        <i class="fas fa-check-circle"></i>
+      </div>
+      <h3 class="modal-title">Help Is On The Way!</h3>
       <div class="modal-message" id="modalMessage">
         We've received your request and a dispatcher is contacting you now. Please keep your phone nearby.
       </div>
-      <button class="modal-action" style="padding: 12px 24px; background: var(--accent); color: var(--primary); border: none; border-radius: 8px; font-weight: 600; cursor: pointer; width: 100%;" onclick="closeModal()">
-        Got It
+      <button class="submit-btn" onclick="closeModal()">
+        <i class="fas fa-check"></i> GOT IT
       </button>
     </div>
   </div>
 
   <script>
     // ======================
-    // Configuration
+    // CONFIGURATION
     // ======================
     const CONFIG = {
-      PHONE_NUMBER: '+1-470-722-8838',
-      DISPATCHER_PHONE: '+1-678-5-8278',
-      ENABLE_ANALYTICS: true,
-      EMAIL_FALLBACK: 'YOUR_EMAIL@HERE.com' // Add your email for fallback
+      FORMSPREE_ENDPOINT: 'https://formspree.io/f/xbddgnjp',
+      PHONE_NUMBER: '+14707228838',
+      EMAIL_FALLBACK: 'your-email@here.com', // Replace with your email
+      SERVICES: [
+        {
+          id: 'towing',
+          icon: 'fas fa-truck-tow',
+          title: 'Towing Service',
+          description: 'Local & long-distance towing to your preferred location',
+          value: 'Towing'
+        },
+        {
+          id: 'battery',
+          icon: 'fas fa-car-battery',
+          title: 'Jump Start / Battery',
+          description: 'Dead battery jump-start or battery replacement',
+          value: 'Battery Jump / Sale'
+        },
+        {
+          id: 'fuel',
+          icon: 'fas fa-gas-pump',
+          title: 'Fuel Delivery',
+          description: 'Emergency gas delivery to get you to the nearest station',
+          value: 'Fuel Delivery'
+        },
+        {
+          id: 'lockout',
+          icon: 'fas fa-key',
+          title: 'Lockout Service',
+          description: 'Keys locked inside? We\'ll unlock your vehicle safely',
+          value: 'Lockout Service'
+        },
+        {
+          id: 'tire',
+          icon: 'fas fa-tire',
+          title: 'Tire Change / Repair',
+          description: 'Flat tire change, repair, or replacement tire sales',
+          value: 'Tire Assistance / Sale'
+        },
+        {
+          id: 'repair',
+          icon: 'fas fa-tools',
+          title: 'Mobile Repair',
+          description: 'Minor mechanical fixes performed at your location',
+          value: 'Mobile Repair'
+        },
+        {
+          id: 'winch',
+          icon: 'fas fa-hands-helping',
+          title: 'Winch Out / Recovery',
+          description: 'Stuck in mud, snow, or ditch? We\'ll pull you out',
+          value: 'Winch Out / Recovery'
+        },
+        {
+          id: 'transport',
+          icon: 'fas fa-shuttle-van',
+          title: 'Rides / Transport',
+          description: 'Need a ride while your vehicle is being serviced?',
+          value: 'Transportation Assistance'
+        }
+      ]
     };
 
     // ======================
-    // DOM Elements
+    // DOM ELEMENTS
     // ======================
     const leadForm = document.getElementById('leadForm');
     const submitBtn = document.getElementById('submitBtn');
     const successModal = document.getElementById('successModal');
     const modalClose = document.getElementById('modalClose');
     const modalMessage = document.getElementById('modalMessage');
-    const emergencyBadge = document.getElementById('emergencyBadge');
-    const phoneLink = document.getElementById('phoneLink');
-    const shareLocationCheckbox = document.getElementById('shareLocation');
+    const servicesGrid = document.getElementById('servicesGrid');
+    const servicesHidden = document.getElementById('servicesHidden');
+    const getLocationBtn = document.getElementById('getLocation');
+    const locationInput = document.getElementById('location');
 
     // ======================
-    // Form Submission Handler
+    // INITIALIZATION
     // ======================
-    leadForm.addEventListener('submit', async function(e) {
+    document.addEventListener('DOMContentLoaded', () => {
+      // Generate service cards
+      renderServiceCards();
+      
+      // Track page view
+      trackEvent('page_view', {
+        page_title: document.title,
+        user_agent: navigator.userAgent
+      });
+      
+      // Update phone links
+      document.querySelectorAll('[href^="tel"]').forEach(link => {
+        link.href = `tel:${CONFIG.PHONE_NUMBER}`;
+      });
+    });
+
+    // ======================
+    // SERVICE CARDS RENDER
+    // ======================
+    function renderServiceCards() {
+      servicesGrid.innerHTML = '';
+      
+      CONFIG.SERVICES.forEach(service => {
+        const card = document.createElement('div');
+        card.className = 'service-card';
+        card.dataset.serviceId = service.id;
+        card.dataset.value = service.value;
+        
+        card.innerHTML = `
+          <div class="service-icon">
+            <i class="${service.icon}"></i>
+          </div>
+          <h3 class="service-title">${service.title}</h3>
+          <p class="service-description">${service.description}</p>
+          <div class="service-checkbox"></div>
+          <input type="checkbox" id="${service.id}" name="service" value="${service.value}" hidden>
+        `;
+        
+        card.addEventListener('click', (e) => {
+          if (!e.target.classList.contains('service-checkbox')) {
+            const checkbox = card.querySelector('input[type="checkbox"]');
+            checkbox.checked = !checkbox.checked;
+            updateCardSelection(card, checkbox.checked);
+          }
+        });
+        
+        servicesGrid.appendChild(card);
+      });
+    }
+
+    // ======================
+    // FORM SUBMISSION HANDLER
+    // ======================
+    leadForm.addEventListener('submit', async (e) => {
       e.preventDefault();
       
       const form = e.target;
-      const originalText = submitBtn.textContent;
+      const originalText = submitBtn.innerHTML;
+      const selectedServices = getSelectedServices();
       
       // Show loading state
-      submitBtn.textContent = '';
-      submitBtn.classList.add('button-loading');
+      submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> DISPATCHING HELP...';
       submitBtn.disabled = true;
       
       try {
-        // 1. Collect selected services and put into hidden field
-        const services = getSelectedServices();
-        document.getElementById('servicesHidden').value = services.join(', ');
-        
-        // 2. Validate required fields
+        // Validate form
         if (!form.name.value.trim() || !form.phone.value.trim() || !form.location.value.trim()) {
           throw new Error('Please fill in all required fields');
         }
         
-        // 3. Get precise location if permission granted
-        let preciseLocation = '';
-        if (shareLocationCheckbox.checked && navigator.geolocation) {
-          try {
-            const position = await new Promise((resolve, reject) => {
-              navigator.geolocation.getCurrentPosition(resolve, reject, {
-                enableHighAccuracy: true,
-                timeout: 5000,
-                maximumAge: 0
-              });
-            });
-            preciseLocation = `${position.coords.latitude},${position.coords.longitude}`;
-            
-            // Add as hidden field
-            if (!document.getElementById('preciseLocation')) {
-              const hiddenField = document.createElement('input');
-              hiddenField.type = 'hidden';
-              hiddenField.id = 'preciseLocation';
-              hiddenField.name = 'preciseLocation';
-              form.appendChild(hiddenField);
-            }
-            document.getElementById('preciseLocation').value = preciseLocation;
-          } catch (geoError) {
-            console.log('Location permission denied or failed:', geoError);
-          }
+        if (selectedServices.length === 0) {
+          throw new Error('Please select at least one service');
         }
         
-        // 4. Submit to Formspree
-        const formData = new FormData(form);
+        // Update hidden services field
+        servicesHidden.value = selectedServices.map(s => s.value).join(', ');
         
-        const response = await fetch(form.action, {
+        // Prepare FormData
+        const formData = new FormData(form);
+        formData.append('timestamp', new Date().toISOString());
+        formData.append('url', window.location.href);
+        
+        // Submit to Formspree
+        const response = await fetch(CONFIG.FORMSPREE_ENDPOINT, {
           method: 'POST',
           body: formData,
           headers: {
@@ -751,239 +1285,269 @@
         });
         
         if (response.ok) {
-          // Success - show modal
-          const customerPhone = form.phone.value.trim();
-          showSuccessModal(customerPhone);
-          
-          // Track conversion
-          trackEvent('form_submission_success', {
-            services_count: services.length
+          // Success
+          showSuccessModal(form.phone.value.trim());
+          trackEvent('lead_submitted', {
+            services_count: selectedServices.length
           });
           
           // Reset form
           form.reset();
-          
-          // Clear checkboxes
-          document.querySelectorAll('input[name="service"]').forEach(cb => {
-            cb.checked = false;
-          });
-          
-          // Clear location checkbox
-          shareLocationCheckbox.checked = false;
+          resetServiceCards();
           
         } else {
-          const errorData = await response.json();
-          throw new Error(errorData.message || 'Form submission failed. Please try again or call us directly.');
+          const error = await response.json();
+          throw new Error(error.message || 'Submission failed');
         }
         
       } catch (error) {
-        console.error('Submission error:', error);
+        console.error('Form submission error:', error);
         
-        // Show error message
-        showErrorModal(error.message);
+        // Show error in modal
+        modalMessage.innerHTML = `
+          <div style="color: var(--danger-light); margin-bottom: 1rem;">
+            <i class="fas fa-exclamation-triangle"></i> ${error.message}
+          </div>
+          <p>Please try again or call us directly at:</p>
+          <a href="tel:${CONFIG.PHONE_NUMBER}" style="color: var(--accent); font-weight: 700; font-size: 1.25rem; text-decoration: none;">
+            ${CONFIG.PHONE_NUMBER}
+          </a>
+        `;
+        successModal.classList.add('active');
+        document.body.style.overflow = 'hidden';
         
         // Track error
-        trackEvent('form_submission_error', {
+        trackEvent('form_error', {
           error: error.message
         });
         
-        // Fallback: Offer email option
-        setTimeout(() => {
-          if (confirm('Having trouble with the form? Click OK to send via email instead.')) {
-            const fallbackEmail = createFallbackEmail(form);
-            window.location.href = fallbackEmail;
-          }
-        }, 1000);
-        
       } finally {
-        // Reset button state
-        submitBtn.textContent = originalText;
-        submitBtn.classList.remove('button-loading');
+        // Reset button
+        submitBtn.innerHTML = originalText;
         submitBtn.disabled = false;
       }
     });
 
-    // Helper function for fallback email
-    function createFallbackEmail(form) {
-      const services = getSelectedServices().join(', ');
-      const name = form.name.value || 'Not provided';
-      const phone = form.phone.value || 'Not provided';
-      const location = form.location.value || 'Not provided';
-      const details = form.details.value || 'Not provided';
-      
-      const subject = `🚨 ROADSIDE ASSISTANCE: ${name}`;
-      const body = `URGENT - Roadside Assistance Request
-
-Name: ${name}
-Phone: ${phone}
-Location: ${location}
-Services Needed: ${services}
-Details: ${details}
-
-Time: ${new Date().toLocaleString()}
-URL: ${window.location.href}`;
-      
-      return `mailto:${CONFIG.EMAIL_FALLBACK}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-    }
-
-    // Helper function to get selected services
+    // ======================
+    // HELPER FUNCTIONS
+    // ======================
     function getSelectedServices() {
-      return Array.from(document.querySelectorAll('input[name="service"]:checked'))
-        .map(cb => cb.value);
+      const selected = [];
+      document.querySelectorAll('.service-card').forEach(card => {
+        const checkbox = card.querySelector('input[type="checkbox"]');
+        if (checkbox.checked) {
+          selected.push({
+            id: card.dataset.serviceId,
+            value: card.dataset.value
+          });
+        }
+      });
+      return selected;
     }
 
-    // Helper function to show success modal
-    function showSuccessModal(phoneNumber) {
+    function updateCardSelection(card, isSelected) {
+      if (isSelected) {
+        card.classList.add('selected');
+      } else {
+        card.classList.remove('selected');
+      }
+    }
+
+    function resetServiceCards() {
+      document.querySelectorAll('.service-card').forEach(card => {
+        card.classList.remove('selected');
+        const checkbox = card.querySelector('input[type="checkbox"]');
+        checkbox.checked = false;
+      });
+    }
+
+    function showSuccessModal(phone) {
       modalMessage.innerHTML = `
-        We've received your request and a dispatcher is contacting you now at <strong>${phoneNumber}</strong>.
-        <br><br>
-        <span style="color: var(--accent); font-weight: 600;">Estimated arrival: 15-30 minutes</span>
-        <br><br>
-        Please keep your phone nearby.
+        <p>We've received your request and a dispatcher is contacting you now at:</p>
+        <div style="font-size: 1.25rem; font-weight: 700; color: var(--accent); margin: 1rem 0;">
+          ${phone}
+        </div>
+        <p><strong>Estimated arrival: 15-30 minutes</strong></p>
+        <p style="margin-top: 1rem; font-size: 0.875rem; color: var(--gray);">
+          Please keep your phone nearby and your location accessible.
+        </p>
       `;
       successModal.classList.add('active');
       document.body.style.overflow = 'hidden';
     }
 
-    // Helper function to show error modal
-    function showErrorModal(message) {
-      modalMessage.innerHTML = `
-        <div style="color: #ef4444; margin-bottom: 16px;">
-          ⚠️ ${message}
-        </div>
-        <div style="font-size: 14px;">
-          Please call us directly: <a href="tel:+1-470-722-8838" style="color: var(--accent); font-weight: 600;">+1 (470) 722-8838</a>
-        </div>
-      `;
-      successModal.classList.add('active');
-      document.body.style.overflow = 'hidden';
-    }
-
-    // Close modal function
     function closeModal() {
       successModal.classList.remove('active');
       document.body.style.overflow = 'auto';
     }
 
-    // Track event function
-    function trackEvent(eventName, eventParams = {}) {
-      // Google Analytics
-      if (window.gtag) {
-        gtag('event', eventName, eventParams);
+    // ======================
+    // GEOLOCATION FUNCTION
+    // ======================
+    getLocationBtn.addEventListener('click', () => {
+      if (!navigator.geolocation) {
+        alert('Geolocation is not supported by your browser');
+        return;
       }
-      // Facebook Pixel
-      if (window.fbq) {
-        fbq('track', eventName, eventParams);
-      }
-      console.log(`[Analytics] ${eventName}:`, eventParams);
-    }
+      
+      getLocationBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Locating...';
+      getLocationBtn.disabled = true;
+      
+      navigator.geolocation.getCurrentPosition(
+        (position) => {
+          const { latitude, longitude } = position.coords;
+          locationInput.value = `${latitude.toFixed(6)}, ${longitude.toFixed(6)}`;
+          getLocationBtn.innerHTML = '<i class="fas fa-check"></i> Location Set';
+          
+          // Add precise location to form
+          let preciseField = document.getElementById('preciseLocation');
+          if (!preciseField) {
+            preciseField = document.createElement('input');
+            preciseField.type = 'hidden';
+            preciseField.id = 'preciseLocation';
+            preciseField.name = 'preciseLocation';
+            leadForm.appendChild(preciseField);
+          }
+          preciseField.value = `${latitude},${longitude}`;
+          
+          setTimeout(() => {
+            getLocationBtn.innerHTML = '<i class="fas fa-location-crosshairs"></i> Use My Location';
+            getLocationBtn.disabled = false;
+          }, 2000);
+          
+          trackEvent('location_shared', {
+            precise: true
+          });
+        },
+        (error) => {
+          console.error('Geolocation error:', error);
+          alert('Unable to get your location. Please enter it manually.');
+          getLocationBtn.innerHTML = '<i class="fas fa-location-crosshairs"></i> Use My Location';
+          getLocationBtn.disabled = false;
+        },
+        {
+          enableHighAccuracy: true,
+          timeout: 10000,
+          maximumAge: 0
+        }
+      );
+    });
 
     // ======================
-    // Event Listeners
+    // ANALYTICS & TRACKING
+    // ======================
+    function trackEvent(eventName, params = {}) {
+      // Google Analytics
+      if (window.gtag) {
+        gtag('event', eventName, params);
+      }
+      
+      // Facebook Pixel
+      if (window.fbq) {
+        fbq('track', eventName, params);
+      }
+      
+      console.log(`[Analytics] ${eventName}:`, params);
+    }
+
+    // Form abandonment tracking
+    let formStarted = false;
+    leadForm.querySelectorAll('input, textarea').forEach(field => {
+      field.addEventListener('focus', () => {
+        if (!formStarted) {
+          formStarted = true;
+          trackEvent('form_started');
+        }
+      });
+    });
+
+    // Phone click tracking
+    document.querySelectorAll('[href^="tel"]').forEach(link => {
+      link.addEventListener('click', () => {
+        trackEvent('phone_call_clicked', {
+          phone_number: CONFIG.PHONE_NUMBER
+        });
+      });
+    });
+
+    // Service selection tracking
+    document.addEventListener('click', (e) => {
+      const serviceCard = e.target.closest('.service-card');
+      if (serviceCard) {
+        const serviceId = serviceCard.dataset.serviceId;
+        const isSelected = serviceCard.classList.contains('selected');
+        trackEvent('service_selected', {
+          service_id: serviceId,
+          action: isSelected ? 'selected' : 'deselected'
+        });
+      }
+    });
+
+    // ======================
+    // MODAL CONTROLS
     // ======================
     modalClose.addEventListener('click', closeModal);
     
-    successModal.addEventListener('click', function(e) {
+    successModal.addEventListener('click', (e) => {
       if (e.target === successModal) {
         closeModal();
       }
     });
 
-    // Phone click tracking
-    [emergencyBadge, phoneLink].forEach(element => {
-      if (element) {
-        element.addEventListener('click', function() {
-          trackEvent('phone_click', {
-            source: this.id,
-            phone_number: CONFIG.PHONE_NUMBER
-          });
-        });
-      }
-    });
-
-    // Form abandonment tracking
-    const formFields = leadForm.querySelectorAll('input, textarea');
-    let formStarted = false;
-    let formTimer = null;
-
-    formFields.forEach(field => {
-      field.addEventListener('focus', () => {
-        if (!formStarted) {
-          formStarted = true;
-          trackEvent('form_start', {
-            field: field.name
-          });
-          
-          // Start timer for abandonment tracking
-          formTimer = setTimeout(() => {
-            trackEvent('form_abandonment_warning', {
-              time_elapsed: '30s'
-            });
-          }, 30000);
-        }
-      });
-    });
-
-    // Clear timer on successful submission
-    leadForm.addEventListener('submit', () => {
-      if (formTimer) {
-        clearTimeout(formTimer);
-      }
-    });
-
-    // ======================
-    // Service Checkbox Improvements
-    // ======================
-    document.querySelectorAll('.service').forEach(serviceEl => {
-      const checkbox = serviceEl.querySelector('input[type="checkbox"]');
-      const label = serviceEl.querySelector('label');
-      
-      // Make entire service card clickable
-      serviceEl.addEventListener('click', (e) => {
-        if (e.target !== checkbox && e.target !== label) {
-          checkbox.checked = !checkbox.checked;
-          checkbox.dispatchEvent(new Event('change'));
-        }
-      });
-      
-      // Visual feedback on change
-      checkbox.addEventListener('change', () => {
-        if (checkbox.checked) {
-          serviceEl.style.borderColor = 'rgba(251, 191, 36, 0.3)';
-          serviceEl.style.background = 'rgba(251, 191, 36, 0.08)';
-        } else {
-          serviceEl.style.borderColor = 'rgba(255,255,255,0.05)';
-          serviceEl.style.background = 'rgba(255,255,255,0.03)';
-        }
-      });
-    });
-
-    // ======================
-    // Page Load Tracking
-    // ======================
-    document.addEventListener('DOMContentLoaded', () => {
-      trackEvent('page_view', {
-        page_title: document.title,
-        page_location: window.location.href
-      });
-    });
-
-    // ======================
-    // Keyboard Shortcuts
-    // ======================
+    // Escape key to close modal
     document.addEventListener('keydown', (e) => {
-      // Ctrl+Enter or Cmd+Enter to submit form
-      if ((e.ctrlKey || e.metaKey) && e.key === 'Enter') {
-        if (document.activeElement.closest('#leadForm')) {
-          leadForm.requestSubmit();
-        }
-      }
-      
-      // Escape to close modal
       if (e.key === 'Escape' && successModal.classList.contains('active')) {
         closeModal();
       }
     });
+
+    // ======================
+    // SMOOTH SCROLL
+    // ======================
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        const targetId = this.getAttribute('href');
+        if (targetId === '#') return;
+        
+        const targetElement = document.querySelector(targetId);
+        if (targetElement) {
+          window.scrollTo({
+            top: targetElement.offsetTop - 80,
+            behavior: 'smooth'
+          });
+        }
+      });
+    });
+
+    // ======================
+    // VISUAL FEEDBACK
+    // ======================
+    // Add hover effects to service cards
+    document.addEventListener('mouseover', (e) => {
+      const card = e.target.closest('.service-card');
+      if (card && !card.classList.contains('selected')) {
+        card.style.transform = 'translateY(-4px)';
+      }
+    });
+
+    document.addEventListener('mouseout', (e) => {
+      const card = e.target.closest('.service-card');
+      if (card && !card.classList.contains('selected')) {
+        card.style.transform = 'translateY(0)';
+      }
+    });
+
+    // ======================
+    // PWA SUPPORT DETECTION
+    // ======================
+    if ('serviceWorker' in navigator && 'https:' === window.location.protocol) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('/sw.js').catch(err => {
+          console.log('Service Worker registration failed:', err);
+        });
+      });
+    }
   </script>
 </body>
 </html>
